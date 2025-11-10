@@ -220,7 +220,7 @@ always @(*) begin
 //    sdram_a[10:0] = do_act ? addr_row[10:0] :
 //            { do_read ? AUTOPRECH[0] : PRECHARGE_ALL[0], addr[AW-1], addr[8:0]};
     sdram_a[12:11] = AW == 20 ? {1'b0, addr_row[11]} : addr_row[12:11];
-    sdram_a[10:0] = do_act ? addr[10:0] :
+    sdram_a[10:0] = do_act ? addr_row[10:0] :
             { do_read ? AUTOPRECH[0] : PRECHARGE_ALL[0], AW == 20  ? {2'b0, addr[7:0]} : {addr[AW-1], addr[8:0]}};
 end
 
