@@ -1,0 +1,5 @@
+# configure MiST target to support calypso features
+MIST=1
+MIST_I2S_AUDIO=1
+# MIST_NO_DIRECT_UPLOAD=1
+JTFRAME_VERSION=0.1

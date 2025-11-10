@@ -135,6 +135,13 @@ case $TARGET in
                 exit 1
             fi
         fi;;
+    calypso) 
+        if [ -v QUARTUS_EXE ]; then
+            PATH=$PATH:$(dirname $QUARTUS_EXE) 
+        else 
+            PATH=$PATH:~/apps/quartus-22.1/quartus/bin
+        fi
+	;;
     *)
         if ! (which quartus_sh|grep intelFPGA_lite -q); then
             PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:.
@@ -318,7 +325,7 @@ if [ $SEED != 1 ]; then
 fi
 
 # Do not use [[ ]] in this if statement !!
-if is_mister_family || test $TARGET = neptuno; then
+if is_mister_family || test $TARGET = neptuno || test $TARGET = calypso; then
     echo $TARGET
     RBF=$PRJPATH/${TARGET}/$OUTPUTDIR/$corename.rbf
 else
