@@ -289,7 +289,7 @@ wire        i2c_end;
     assign but_coin    = 4'd0;
     assign but_start   = 4'd0;
     wire [63:0] user_io_status;
-	 assign status = {user_io_status[63:1], user_io_status[0] | buttons[1]}; // status[0] | buttons[1] is reset
+    assign status = {user_io_status[63:1], user_io_status[0] | buttons[1]}; // status[0] | buttons[1] is reset
 
     user_io #(.ROM_DIRECT_UPLOAD(`JTFRAME_MIST_DIRECT), .FEATURES(32'h0 /*| (QSPI << 2)*/ | (HDMI << 14))) u_userio(
         .clk_sys        ( clk_sys   ),
@@ -303,8 +303,8 @@ wire        i2c_end;
         .SPI_SS_IO      ( CONF_DATA0),
         .SPI_MISO       ( SPI_DO    ),
         .SPI_MOSI       ( SPI_DI    ),
-        .joystick_0     ( joystick2 ),
-        .joystick_1     ( joystick1 ),
+        .joystick_0     ( joystick1 ),
+        .joystick_1     ( joystick2 ),
         .joystick_2     ( joystick3 ),
         .joystick_3     ( joystick4 ),
         .buttons        ( buttons   ),
