@@ -42,4 +42,4 @@
 	url = https://github.com/jotego/jtkcpu.git
 [submodule "modules/jt900h"]
 	path = modules/jt900h
-	url = git@github.com:jotego/jt900h.git
+	url = https://github.com/jotego/jt900h.git
