@@ -11,7 +11,7 @@ new_paths = [path for path in paths if 'modules/jtframe' not in path]
 print(':'.join(new_paths))
 EOF
 
-export PATH=`python $TMP`
+export PATH=`python3 $TMP`
 rm -f $TMP
 
 # restore all environment variables
